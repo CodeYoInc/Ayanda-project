@@ -20,6 +20,48 @@
     <link rel="stylesheet" href="assets/css/templatemo-space-dynamic.css">
     <link rel="stylesheet" href="assets/css/animated.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+
+    <script>
+      $(function() {
+  $(".img-w").each(function() {
+    $(this).wrap("<div class='img-c'></div>")
+    let imgSrc = $(this).find("img").attr("src");
+     $(this).css('background-image', 'url(' + imgSrc + ')');
+  })
+            
+  
+  $(".img-c").click(function() {
+    let w = $(this).outerWidth()
+    let h = $(this).outerHeight()
+    let x = $(this).offset().left
+    let y = $(this).offset().top
+    
+    
+    $(".active").not($(this)).remove()
+    let copy = $(this).clone();
+    copy.insertAfter($(this)).height(h).width(w).delay(500).addClass("active")
+    $(".active").css('top', y - 8);
+    $(".active").css('left', x - 8);
+    
+      setTimeout(function() {
+    copy.addClass("positioned")
+  }, 0)
+    
+  }) 
+  
+  
+
+  
+})
+
+$(document).on("click", ".img-c.active", function() {
+  let copy = $(this)
+  copy.removeClass("positioned active").addClass("postactive")
+  setTimeout(function() {
+    copy.remove();
+  }, 500)
+})
+    </script>
 <!--
     
 TemplateMo 562 Space Dynamic
@@ -91,7 +133,12 @@ https://templatemo.com/tm-562-space-dynamic
             </div>
             <div class="col-lg-6">
               <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img src="assets/images/banner-right-image.png" alt="team meeting">
+                <div class="gallery">
+                  <img src="assets/images/planta.jpeg">
+                  <img src="assets/images/praca.jpg">
+                  <img src="assets/images/ong.jpg">
+                  <img src="assets/images/parcerias.jpeg">
+                </div>
               </div>
             </div>
           </div>
@@ -167,7 +214,7 @@ https://templatemo.com/tm-562-space-dynamic
       <div class="row">
         <div class="col-lg-6 align-self-center  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
           <div class="left-image">
-            <img src="assets/images/services-left-image.png" alt="">
+            <img src="assets/images/geral.jpg" alt="">
           </div>
         </div>
         <div class="col-lg-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
@@ -192,53 +239,53 @@ https://templatemo.com/tm-562-space-dynamic
       </div>
       <div class="row">
         <div class="col-lg-3 col-sm-6">
-          <a href="#">
+         
             <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
               <div class="hidden-content">
                 <h4>Preservação</h4>
                 <p>Promovemos a preservação do meio ambiente.</p>
               </div>
               <div class="showed-content">
-                <img src="assets/images/portfolio-image.png" alt="">
+                <img src="assets/images/nome.jpg" alt="">
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-3 col-sm-6">
-          <a href="#">
+          
             <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
               <div class="hidden-content">
                 <h4>Patrimônio publico</h4>
                 <p>Incentivamos a valorização e preservação do patrimônio público.</p>
               </div>
               <div class="showed-content">
-                <img src="assets/images/portfolio-image.png" alt="">
+                <img src="assets/images/praca.jpg" alt="">
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-3 col-sm-6">
-          <a href="#">
+      
             <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
               <div class="hidden-content">
                 <h4>Responsabilidade</h4>
                 <p>Desenvolvemos a responsabilidade social.</p>
               </div>
               <div class="showed-content">
-                <img src="assets/images/portfolio-image.png" alt="">
+                <img src="assets/images/ong.jpg" alt="">
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-3 col-sm-6">
-          <a href="#">
+         
             <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
               <div class="hidden-content">
                 <h4>Reflexões</h4>
                 <p>Refletimos sobre temas como igualdade, integridade e educação em direitos humanos.</p>
               </div>
               <div class="showed-content">
-                <img src="assets/images/portfolio-image.png" alt="">
+                <img src="assets/images/geral.jpg" alt="">
               </div>
             </div>
           </a>
@@ -252,30 +299,31 @@ https://templatemo.com/tm-562-space-dynamic
       <div class="row">
         <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
           <div class="section-heading">
-            <h2>Check Out What Is <em>Trending</em> In Our Latest <span>News</span></h2>
+            <h2><em>Ações</em></h2>
+            <br>
           </div>
         </div>
         <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
           <div class="top-dec">
-            <img src="assets/images/blog-dec.png" alt="">
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
           <div class="left-image">
-            <a href="#"><img src="assets/images/big-blog-thumb.jpg" alt="Workspace Desktop"></a>
+            <img src="assets/images/trilha.jpg" alt="Workspace Desktop">
             <div class="info">
+              <br>
+              <br>  
               <div class="inner-content">
                 <ul>
-                  <li><i class="fa fa-calendar"></i> 24 Mar 2021</li>
-                  <li><i class="fa fa-users"></i> TemplateMo</li>
-                  <li><i class="fa fa-folder"></i> Branding</li>
+                  <li><i class="fa fa-calendar0"></i></li>
+                  <li><i class="fa fa-users0"></i></li>
                 </ul>
-                <a href="#"><h4>SEO Agency &amp; Digital Marketing</h4></a>
-                <p>Lorem ipsum dolor sit amet, consectetur and sed doer ket eismod tempor incididunt ut labore et dolore magna...</p>
+                <h4>Trilha ecológica</h4>
+                <p>Implantação da trilha ecológica na lateral da entrada dos estudantes.</p>
                 <div class="main-blue-button">
-                  <a href="#">Discover More</a>
+                  
                 </div>
               </div>
             </div>
@@ -286,32 +334,32 @@ https://templatemo.com/tm-562-space-dynamic
             <ul>
               <li>
                 <div class="left-content align-self-center">
-                  <span><i class="fa fa-calendar"></i> 18 Mar 2021</span>
-                  <a href="#"><h4>New Websites &amp; Backlinks</h4></a>
-                  <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
+                  <span><i class="fa fa-calendar0"></i></span>
+                 <h4>Horta comunitária</h4>
+                  <p>Revitalização da horta comunitária com plantas medicinais na praça em frente à escola e ponto de coletivo (Melhoria do equipamento público).</p>
                 </div>
                 <div class="right-image">
-                  <a href="#"><img src="assets/images/blog-thumb-01.jpg" alt=""></a>
+                  <img src="assets/images/planta.jpeg" alt="">
                 </div>
               </li>
               <li>
                 <div class="left-content align-self-center">
-                  <span><i class="fa fa-calendar"></i> 14 Mar 2021</span>
-                  <a href="#"><h4>SEO Analysis &amp; Content Ideas</h4></a>
-                  <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
+                  <span><i class="fa fa-calendar0"></i></span>
+                  <h4>Casa de vegetação</h4>
+                  <p>Revitalização/reforma da casa de vegetação.</p>
                 </div>
                 <div class="right-image">
-                  <a href="#"><img src="assets/images/blog-thumb-01.jpg" alt=""></a>
+                  <img src="assets/images/blog-thumb-01.jpg" alt="">
                 </div>
               </li>
               <li>
                 <div class="left-content align-self-center">
-                  <span><i class="fa fa-calendar"></i> 06 Mar 2021</span>
-                  <a href="#"><h4>SEO Tips &amp; Digital Marketing</h4></a>
-                  <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
+                  <span><i class="fa fa-calendar0"></i></span>
+                  <h4>Salas ambiente</h4>
+                  <p>O espaço Agro será organizado para aulas práticas e pesquisas, com a implantação de salas ao ar livre (Sala Verde), destinadas a aulas e descanso nos intervalos.</p>
                 </div>
                 <div class="right-image">
-                  <a href="#"><img src="assets/images/blog-thumb-01.jpg" alt=""></a>
+                  <img src="assets/images/verde.jpg" alt="">
                 </div>
               </li>
             </ul>
@@ -319,6 +367,19 @@ https://templatemo.com/tm-562-space-dynamic
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="gallery-2">
+    <div class="img-w">
+      <img src="https://images.unsplash.com/photo-1485766410122-1b403edb53db?dpr=1&auto=format&fit=crop&w=1500&h=846&q=80&cs=tinysrgb&crop=" alt="" /></div>
+    <div class="img-w"><img src="https://images.unsplash.com/photo-1485793997698-baba81bf21ab?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" /></div>
+    <div class="img-w"><img src="https://images.unsplash.com/photo-1485871800663-71856dc09ec4?dpr=1&auto=format&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb&crop=" alt="" /></div>
+    <div class="img-w"><img src="https://images.unsplash.com/photo-1485871882310-4ecdab8a6f94?dpr=1&auto=format&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb&crop=" alt="" /></div>
+    <div class="img-w"><img src="https://images.unsplash.com/photo-1485872304698-0537e003288d?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" /></div>
+    <div class="img-w"><img src="https://images.unsplash.com/photo-1485872325464-50f17b82075a?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" /></div>
+    <div class="img-w"><img src="https://images.unsplash.com/photo-1470171119584-533105644520?dpr=1&auto=format&fit=crop&w=1500&h=886&q=80&cs=tinysrgb&crop=" alt="" /></div>
+    <div class="img-w"><img src="https://images.unsplash.com/photo-1485881787686-9314a2bc8f9b?dpr=1&auto=format&fit=crop&w=1500&h=969&q=80&cs=tinysrgb&crop=" alt="" /></div>
+    <div class="img-w"><img src="https://images.unsplash.com/photo-1485889397316-8393dd065127?dpr=1&auto=format&fit=crop&w=1500&h=843&q=80&cs=tinysrgb&crop=" alt="" /></div>
   </div>
 
   <div id="contact" class="contact-us section">
